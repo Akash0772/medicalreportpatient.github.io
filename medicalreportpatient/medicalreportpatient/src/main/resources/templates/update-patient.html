@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Patient</title>
+</head>
+<body>
+    <h1>Update Patient</h1>
+    <form method="post" th:action="@{/update-patient/{id}(id=${patient.id})}">
+        <label>Name:</label>
+        <input type="text" th:field="${patient.name}" />
+        <br />
+        <label>Date of Birth:</label>
+        <input type="date" th:field="${patient.dateOfBirth}" />
+        <br />
+        <label>Gender:</label>
+       <!--   <select th:field="*{gender}">
+            <option value="">--Select--</option>
+            <option value="MALE" th:selected="${patient.gender == 'MALE'}">Male</option>
+            <option value="FEMALE" th:selected="${patient.gender == 'FEMALE'}">Female</option>
+        </select> -->
+  <select class="form-control" id="gender" th:field="${patient.gender}">
+    <option value="MALE">Male</option>
+    <option value="FEMALE">Female</option>
+    <option value="OTHER">Other</option>
+  </select>
+        <br />
+        <label>Address:</label>
+        <textarea rows="3" th:field="${patient.address}"></textarea>
+        <br />
+        <input type="submit" value="Update Patient" />
+        <a th:href="@{/}">Cancel</a>
+    </form>
+</body>
+</html>
