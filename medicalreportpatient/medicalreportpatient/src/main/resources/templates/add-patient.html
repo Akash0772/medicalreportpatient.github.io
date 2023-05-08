@@ -13,11 +13,12 @@
         <input type="date" th:field="${patient.dateOfBirth}" />
         <br />
         <label>Gender:</label>
-     <select>
-        <option value="">--Select--</option>
-        <option value="MALE" th:selected="${patient.gender == 'MALE'}">Male</option>
-        <option value="FEMALE" th:selected="${patient.gender == 'FEMALE'}">Female</option>
-    </select>
+	<select class="form-control" id="gender" th:field="${patient.gender}">
+  	<option value="">--Select--</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Other">Other</option>
+  </select>
     <br />
     <label>Address:</label>
     <textarea rows="3" th:field="${patient.address}"></textarea>
